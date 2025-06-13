@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Tester</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    input, button {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Webhook API Tester</h2>
+  <input type="text" id="apiUrl" placeholder="https://junior-application-project-theos-the-dawgs-projects.vercel.app/">
+  <input type="text" id="email" placeholder="motheo13@outlook.com">
+  <button onclick="runTest()">Run Test</button>
+
+  <h3>Response:</h3>
+  <pre id="output">Waiting...</pre>
+
+  <script>
+    async function runTest() {
+      const url = document.getElementById("apiUrl").value;
+      const email = document.getElementById("email").value;
+      const testUrl = `https://yhxzjyykdsfkdrmdxgho.supabase.co/functions/v1/junior-dev?url=${encodeURIComponent(url)}&email=${encodeURIComponent(email)}`;
+
+      const response = await fetch(testUrl);
+      const data = await response.text();
+
+      document.getElementById("output").textContent = data;
+    }
+  </script>
+</body>
+</html>
