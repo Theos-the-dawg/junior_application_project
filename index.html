@@ -26,8 +26,8 @@
 <body>
 
   <h2>Webhook API Tester</h2>
-  <input type="text" id="apiUrl" placeholder="https://junior-application-project-theos-the-dawgs-projects.vercel.app/">
-  <input type="text" id="email" placeholder="motheo13@outlook.com">
+  <input type="text" id="apiUrl" placeholder="motheo">
+  <input type="text" id="email" placeholder="e-mail">
   <button onclick="runTest()">Run Test</button>
 
   <h3>Response:</h3>
@@ -37,7 +37,7 @@
     async function runTest() {
       const url = document.getElementById("apiUrl").value;
       const email = document.getElementById("email").value;
-      const testUrl = `https://yhxzjyykdsfkdrmdxgho.supabase.co/functions/v1/junior-dev?url=${encodeURIComponent(url)}&email=${encodeURIComponent(email)}`;
+      const testUrl = `https://junior-application-project-theos-the-dawgs-projects.vercel.app/sort-characters=${encodeURIComponent(url)}&email=${encodeURIComponent(email)}`;
 
       const response = await fetch(testUrl);
       const data = await response.text();
