@@ -29,3 +29,4 @@ def sort_characters(payload: WebhookInput):
 
     sorted_array = sorted(list(payload.data))
     return {"word": sorted_array}
+
